@@ -8,19 +8,11 @@ export function PricingPanel() {
         Preview free. Download HD for {PRICING.singleHdDownload.displayPrice}. <br className="hidden sm:block"/> No subscription.
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 text-left">
-        <div className="rounded-2xl border border-primary/30 bg-white/70 p-5 shadow-sm">
-          <div className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">Launch price</div>
-          <h3 className="text-lg font-medium">Single HD download</h3>
-          <p className="text-3xl font-semibold mt-2">{PRICING.singleHdDownload.displayPrice}</p>
-          <p className="text-sm text-foreground/60 mt-2">Pay only if your free preview is worth keeping.</p>
-        </div>
-        <div className="rounded-2xl border border-border bg-white/50 p-5">
-          <div className="text-xs font-semibold uppercase tracking-wide text-foreground/40 mb-2">Planned next</div>
-          <h3 className="text-lg font-medium">3-download pack</h3>
-          <p className="text-3xl font-semibold mt-2">{PRICING.threePack.displayPrice}</p>
-          <p className="text-sm text-foreground/60 mt-2">A better option for testing a few variants. Coming after the single-download flow is proven.</p>
-        </div>
+      <div className="rounded-2xl border border-primary/30 bg-white/70 p-5 shadow-sm mb-8 text-left max-w-sm mx-auto">
+        <div className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">MVP launch price</div>
+        <h3 className="text-lg font-medium">Single HD download</h3>
+        <p className="text-3xl font-semibold mt-2">{PRICING.singleHdDownload.displayPrice}</p>
+        <p className="text-sm text-foreground/60 mt-2">Pay only if your free preview is worth keeping.</p>
       </div>
       
       <div className="flex flex-col sm:flex-row justify-center gap-6 text-left max-w-lg mx-auto">

@@ -144,37 +144,25 @@ Rough problem:
 - Image generation cost and abuse risk matter.
 - Support time can destroy margins.
 
-### Recommended pricing tests
+### MVP pricing decision
 
-#### Test A - Current micro-payment
+Launch the first public version with the simplest possible flow:
 
-- $0.99 per HD download.
-- Use to validate willingness to pay.
-- Keep only if AI cost is low and conversion is high.
+- **$0.99 per HD download.**
+- No packs.
+- No credits.
+- No accounts.
+- No subscriptions.
 
-#### Test B - Better minimum viable price
+Reason: the immediate goal is validation, not pricing optimization. If people will not pay $0.99 after seeing a free preview, a more complex package will not save the product. First prove the core behavior: preview -> checkout -> download.
 
-- $2.99 per HD download.
-- Still impulse-priced, much better fee coverage.
+### Later pricing tests, only after real usage
 
-#### Test C - Pack pricing
+Consider these only if the simple flow gets traffic and paid downloads:
 
-- $4.99 for 3 HD downloads/variants.
-- $9.99 for 10 credits.
-
-#### Test D - Creator pack / service bridge
-
-- $29 one-time mini pack: 10 polished images.
-- $99-$199 custom creator/business photo refresh service, manually assisted by Alex/Orion.
-
-### Recommendation
-
-Launch with either:
-
-1. **$0.99 as early validation price**, clearly temporary; or
-2. **$2.99 single download + $4.99 3-pack**, if we want healthier unit economics immediately.
-
-My bias: **$2.99 single / $4.99 3-pack** is more serious. $0.99 risks training users to see it as a toy.
+- $1.99 or $2.99 single download if unit economics are bad.
+- Small pack pricing if users repeatedly generate variants.
+- Manual creator/business packs if Alex wants a higher-ticket service bridge.
 
 ## Block 6 - Key Resources
 
@@ -258,10 +246,8 @@ Mitigation:
 If net profit per paid download is roughly:
 
 - $0.30 at $0.99 price -> 100 paid downloads = $30 gross contribution.
-- $1.50 at $2.99 price -> 100 paid downloads = $150 gross contribution.
-- $3.00 at $4.99 3-pack blended -> 100 customers = $300 gross contribution.
 
-This is why $0.99 is useful for validation but weak as a business unless volume is large.
+This is not attractive as a mature business, but it is acceptable as a validation price. If the funnel works, price can be raised later with evidence instead of guessing.
 
 ## Block 10 - Time & Energy Budget
 
@@ -298,7 +284,7 @@ If zero paid downloads after decent traffic and good previews, fix offer/result 
 ## Immediate MVP Decisions Needed
 
 1. Product name: **PhotoForge AI** vs StudioSnap AI vs other.
-2. Price test: **decided for local MVP code: $2.99 single HD download. $4.99 3-pack remains planned next, not active checkout yet.**
+2. Price test: **decided for MVP code: $0.99 single HD download, no packs/credits/accounts.**
 3. Target model/API: Gemini vs GPT Images target.
 4. Launch location: CanadianProducer.ca subdomain vs standalone domain.
 5. Which first landing page: passport/profile, outfit try-on, or style portrait.
@@ -315,11 +301,10 @@ If zero paid downloads after decent traffic and good previews, fix offer/result 
 
 ## Orion's Current Recommendation
 
-Position it as **PhotoForge AI** and launch with:
+Position it as **PhotoForge AI** or keep **StudioSnap AI** for now, and launch with:
 
 - Free watermarked preview.
-- $2.99 single HD download.
-- $4.99 3-download/variant pack.
-- Optional manual creator/business pack later: $49-$99 intro offer.
+- $0.99 single HD download.
+- No packs/credits/accounts in MVP.
 
-Reason: still impulse-priced, but less financially silly than $0.99. Tiny payments are cute until Stripe and API costs eat lunch like raccoons in a dumpster.
+Reason: fewer moving parts. Tiny payments are financially silly, yes, but overbuilt MVPs are where small apps go to die in a tasteful SaaS coffin.

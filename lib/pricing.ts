@@ -3,16 +3,8 @@ export const PRICING = {
     id: "single_hd_download",
     name: "HD Download",
     description: "One high-resolution, watermark-free image download.",
-    unitAmountCents: 299,
-    displayPrice: "$2.99",
-  },
-  threePack: {
-    id: "three_pack",
-    name: "3-Download Pack",
-    description: "Planned pack for three HD downloads or variants.",
-    unitAmountCents: 499,
-    displayPrice: "$4.99",
-    status: "planned",
+    unitAmountCents: 99,
+    displayPrice: "$0.99",
   },
 } as const;
 
