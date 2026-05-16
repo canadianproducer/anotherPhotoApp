@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:mvp-flow": "node scripts/test-mvp-flow.mjs"
   },
   "dependencies": {
     "@google/genai": "^1.51.0",
