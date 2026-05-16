@@ -35,12 +35,12 @@ export default function RootLayout({
               StudioSnap <span className="text-primary font-semibold">AI</span>
             </Link>
             <nav className="hidden md:flex gap-6 text-sm font-medium text-foreground/80">
-              <Link href="#tools" className="hover:text-primary transition-colors">Tools</Link>
-              <Link href="#pricing" className="hover:text-primary transition-colors">Pricing</Link>
-              <Link href="#privacy" className="hover:text-primary transition-colors">Privacy</Link>
+              <Link href="/#tools" className="hover:text-primary transition-colors">Tools</Link>
+              <Link href="/#pricing" className="hover:text-primary transition-colors">Pricing</Link>
+              <Link href="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
             </nav>
             <Link 
-              href="#tools" 
+              href="/#tools" 
               className="px-4 py-2 bg-foreground text-background text-sm font-medium rounded-full hover:bg-primary hover:text-white transition-all shadow-sm"
             >
               Try it free
@@ -58,9 +58,9 @@ export default function RootLayout({
               Passport-style results are AI-generated and may still require manual verification against official document requirements.
             </p>
             <div className="flex justify-center gap-6 text-sm font-medium text-foreground/80 mb-8">
-              <Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link>
-              <Link href="#" className="hover:text-primary transition-colors">Terms</Link>
-              <Link href="#" className="hover:text-primary transition-colors">Contact</Link>
+              <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+              <Link href="/terms" className="hover:text-primary transition-colors">Terms</Link>
+              <Link href="/contact" className="hover:text-primary transition-colors">Contact</Link>
             </div>
             <p className="text-xs text-foreground/40">
               © {new Date().getFullYear()} StudioSnap AI. All rights reserved.
