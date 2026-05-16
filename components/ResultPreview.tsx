@@ -1,6 +1,7 @@
 "use client";
 
 import { Download, RefreshCw } from "lucide-react";
+import { PRICING } from "@/lib/pricing";
 
 interface ResultPreviewProps {
   previewUrl: string;
@@ -55,7 +56,7 @@ export function ResultPreview({ previewUrl, onReset, onDownload, isCheckingOut }
           ) : (
             <>
               <Download size={18} />
-              Download HD – $0.99
+              Download HD – {PRICING.singleHdDownload.displayPrice}
             </>
           )}
         </button>

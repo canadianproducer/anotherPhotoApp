@@ -1,6 +1,7 @@
 import { ToolSelector } from "@/components/ToolSelector";
 import { PricingPanel } from "@/components/PricingPanel";
 import { TrustSection } from "@/components/TrustSection";
+import { PRICING } from "@/lib/pricing";
 
 export default function Home() {
   return (
@@ -11,14 +12,14 @@ export default function Home() {
           AI photo edits <br className="hidden md:block"/> without subscriptions.
         </h1>
         <p className="text-lg md:text-xl text-foreground/70 mb-8 max-w-2xl mx-auto font-light leading-relaxed">
-          Create passport-style photos, try outfits, or transform your portrait with a reference image. Preview free. Download HD for $0.99.
+          Create passport-style photos, try outfits, or transform your portrait with a reference image. Preview free. Download HD for {PRICING.singleHdDownload.displayPrice}.
         </p>
         <div className="flex flex-col items-center gap-3">
           <a href="#tools" className="px-8 py-3 bg-primary text-white text-lg font-medium rounded-full hover:bg-primary/90 transition-all shadow-md">
             Choose a tool
           </a>
           <p className="text-xs font-medium text-foreground/50 tracking-wide uppercase mt-4">
-            No account required &middot; Watermarked preview free &middot; HD download $0.99
+            No account required &middot; Watermarked preview free &middot; HD download {PRICING.singleHdDownload.displayPrice}
           </p>
         </div>
       </section>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { PRICING } from "@/lib/pricing";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "StudioSnap AI | Premium AI Photo Edits",
-  description: "Create passport-style photos, try outfits, or transform your portrait with a reference image. Preview free. Download HD for $0.99.",
+  description: `Create passport-style photos, try outfits, or transform your portrait with a reference image. Preview free. Download HD for ${PRICING.singleHdDownload.displayPrice}.`,
 };
 
 export default function RootLayout({

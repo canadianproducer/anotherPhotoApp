@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { stripe, isMockPaymentMode } from '@/lib/stripe';
 import { getJob } from '@/lib/storage';
+import { PRICING } from '@/lib/pricing';
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
 
@@ -23,6 +24,8 @@ export async function POST(req: Request) {
       return NextResponse.json({ url: `${APP_URL}/success?session_id=mock_${jobId}&job_id=${jobId}` });
     }
 
+    const product = PRICING.singleHdDownload;
+
     // Create a Checkout Session
     const session = await stripe!.checkout.sessions.create({
       payment_method_types: ['card'],
@@ -30,10 +33,10 @@ export async function POST(req: Request) {
         {
           price_data: {
             currency: 'usd',
-            unit_amount: 99, // $0.99
+            unit_amount: product.unitAmountCents,
             product_data: {
-              name: 'StudioSnap AI HD Download',
-              description: `High-resolution, watermark-free download for job ${jobId.substring(0,8)}`,
+              name: `StudioSnap AI ${product.name}`,
+              description: `${product.description} Job ${jobId.substring(0,8)}.`,
               images: [`${APP_URL}/api/image/${jobId}?type=preview`], // Stripe will pull the preview to show on checkout
             },
           },

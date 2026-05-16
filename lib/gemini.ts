@@ -1,9 +1,10 @@
 import { GoogleGenAI } from '@google/genai';
+import { getPhotoPrompt, type PhotoToolType } from './photo-prompts';
 
 // Note: If GEMINI_API_KEY is missing, we use mock mode.
 
 export interface GenerateImageParams {
-  toolType: "passport" | "outfit" | "style";
+  toolType: PhotoToolType;
   userImage: string; // base64
   referenceImage?: string; // base64
 }
@@ -22,15 +23,8 @@ export async function generateImageWithGemini({
     return generateMockImage();
   }
 
-  let prompt = "";
-  
-  if (toolType === "passport") {
-    prompt = `Use the uploaded photo as the identity reference. Create a realistic official ID photo of the same person. Preserve the exact facial identity, facial structure, skin tone, hair color, and natural appearance. Center the face and shoulders. Use a neutral expression, eyes facing camera, mouth closed, even studio lighting, and a white plain clean background. Serious look, no smile. Something professional like on LinkedIn. Do not glamorize, beautify, age-change, or alter identity. Keep natural skin texture. No text, no decorative elements, no extra people, no AI artifacts. Output should look like a clean professional ID photo on a white background.`;
-  } else if (toolType === "outfit") {
-    prompt = `Image A is the person photo. Image B is the outfit reference. Dress the person from Image A in the outfit shown in Image B. Preserve the person’s face, identity, approximate body proportions, hairstyle, pose, camera angle, and background as much as possible. Transfer the garment shape, color, fabric, pattern, cut, fit, and styling from Image B. Make the clothing look naturally worn by the person with realistic fabric folds, shadows, seams, and layering. Remove or replace visible old clothing where needed. Do not change the person’s face. Do not copy another model’s face or body from Image B. No extra people, no text, no warped hands, no broken anatomy, no glossy plastic skin, no AI artifacts. Photorealistic result.`;
-  } else if (toolType === "style") {
-    prompt = `Image A is the identity reference. Image B is the visual style and scene reference. Create a photorealistic premium editorial portrait of the same person from Image A, transformed into the visual world of Image B. Preserve the person’s face, identity, skin tone, hair color, and recognizable features. Transfer from Image B: lighting mood, color palette, location/environment, composition style, wardrobe vibe, pose direction, atmosphere, and overall aesthetic. Do not copy any other person’s face or identity from Image B. Do not add extra people. Make the person naturally integrated into the scene with matching light on the face and body. Realistic skin texture, natural hands, natural eyes, believable anatomy. No text, no watermark from the reference, no AI artifacts, no over-smoothed plastic skin. High-end lifestyle photography look.`;
-  }
+  const promptDefinition = getPhotoPrompt(toolType);
+  const prompt = promptDefinition.prompt;
 
   const parts: Array<{ inlineData?: { mimeType: string, data: string }, text?: string }> = [];
   
