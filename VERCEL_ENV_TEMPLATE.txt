@@ -1,0 +1,12 @@
+Copy values into .env.vercel.local locally. Do not commit real secrets.
+
+VERCEL_TOKEN=
+VERCEL_ORG_ID=
+VERCEL_PROJECT_ID=
+GEMINI_API_KEY=
+BLOB_READ_WRITE_TOKEN=
+STRIPE_SECRET_KEY=
+STRIPE_WEBHOOK_SECRET=
+NEXT_PUBLIC_APP_URL=https://photoforge.intechtrap.com
+NEXT_PUBLIC_SUPPORT_EMAIL=support@intechtrap.com
+MVP_TEST_BASE_URL=https://photoforge.intechtrap.com
